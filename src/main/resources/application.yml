@@ -1,0 +1,19 @@
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          okta:
+            user-name-attribute: email
+
+okta:
+  oauth2:
+    issuer: https://{yourOktaDomain}/oauth2/default
+    client-id: {clientId}
+    client-secret: {clientSecret}
+    scopes:
+      - email
+      - openid
+      - profile
+      - quiz
