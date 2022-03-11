@@ -31,7 +31,6 @@ public class HomeController {
     @PreAuthorize("hasAuthority('SCOPE_profile')")
     public Mono<Rendering> userDetails(OAuth2AuthenticationToken authentication) {
         return Mono.just(Rendering.view("userProfile").modelAttribute("details", authentication.getPrincipal().getAttributes())
-                .build());
+            .build());
     }
-
 }
