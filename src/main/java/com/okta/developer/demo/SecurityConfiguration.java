@@ -24,12 +24,11 @@ public class SecurityConfiguration {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         http
-                .authorizeExchange().pathMatchers("/").permitAll().and().anonymous()
-                .and().authorizeExchange().anyExchange().authenticated()
-                .and().oauth2Client()
-                .and().oauth2Login()
-                .and().logout().logoutSuccessHandler(logoutSuccessHandler());
-
+            .authorizeExchange().pathMatchers("/").permitAll().and().anonymous()
+            .and().authorizeExchange().anyExchange().authenticated()
+            .and().oauth2Client()
+            .and().oauth2Login()
+            .and().logout().logoutSuccessHandler(logoutSuccessHandler());
 
         return http.build();
     }
