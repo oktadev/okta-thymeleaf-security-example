@@ -1,4 +1,4 @@
-# Secure Thymeleaf with Spring Webflux Example
+# Thymeleaf Security with WebFlux Example
 
 This repository contains all the code for [Thymeleaf Templates with Spring WebFlux to Secure Your Apps][blog]. This example illustrates how to protect functionality based on the user authorities and authentication status, and how to prevent CSRF attacks with Spring Security.
 
