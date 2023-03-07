@@ -1,8 +1,8 @@
 package com.okta.developer.demo;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.logout.RedirectServerLogoutSuccessHandler;
@@ -10,12 +10,12 @@ import org.springframework.security.web.server.authentication.logout.ServerLogou
 
 import java.net.URI;
 
-@EnableWebFluxSecurity
+@Configuration
 @EnableReactiveMethodSecurity
 public class SecurityConfiguration {
 
     @Bean
-    public ServerLogoutSuccessHandler logoutSuccessHandler(){
+    public ServerLogoutSuccessHandler logoutSuccessHandler() {
         RedirectServerLogoutSuccessHandler handler = new RedirectServerLogoutSuccessHandler();
         handler.setLogoutSuccessUrl(URI.create("/"));
         return handler;
