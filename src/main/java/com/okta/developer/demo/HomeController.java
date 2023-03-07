@@ -22,7 +22,7 @@ public class HomeController {
     public Mono<Rendering> home(Authentication authentication) {
         List<String> authorities = authentication.getAuthorities()
                 .stream()
-                .map(scope -> scope.toString())
+                .map(Object::toString)
                 .collect(Collectors.toList());
         return Mono.just(Rendering.view("home").modelAttribute("authorities", authorities).build());
     }
